@@ -34,7 +34,7 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   {
     path: '',
-    component: AssignmentsComponent
+    component: LoginComponent
   },
   {
     path: 'home',

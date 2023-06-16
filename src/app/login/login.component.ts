@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { AssignmentsService } from '../shared/assignments.service';
+import { Router } from '@angular/router';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +10,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+    login:string = "";
+    password: string = ""
+    error_msg:string =""
+    show:boolean = false
+    constructor (public ClientServ:AssignmentsService,public router:Router){}
+
+    signUp(){
+      this.ClientServ.connect(this.login, this.password)
+        .pipe(
+          catchError(error => {
+            // Handle the error here, log it, show an error message, etc.
+            console.error('An error occurred:', error);
+            this.show = true
+            // Return a new Observable or throw an error to propagate it further
+            return throwError('Something went wrong. Please try again later.');
+          })
+        )
+        .subscribe(data =>{
+          console.log(data)
+          // localStorage.setItem("token",JSON.stringify(data.token));
+          // this.toolServ.setUser(user);
+          this.router.navigate(['/home']);
+        });
+
+    }
+      
 
 }
