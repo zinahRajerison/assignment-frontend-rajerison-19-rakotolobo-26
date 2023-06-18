@@ -27,6 +27,7 @@ export class LoginComponent {
             // Handle the error here, log it, show an error message, etc.
             console.error('An error occurred:', error);
             this.show = true
+            // this.router.navigate(['/login']);
             // Return a new Observable or throw an error to propagate it further
             return throwError('Something went wrong. Please try again later.');
           })
