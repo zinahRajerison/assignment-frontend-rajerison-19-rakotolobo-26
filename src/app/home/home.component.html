@@ -1,30 +1,6 @@
-<!-- <h1>
-    <nav>
-        <a routerLink="/home">{{title}}</a>
-    </nav>
-</h1>
-<p>
-    <button mat-raised-button color="primary" (click)="creerDonneesDeTest()">
-        Peupler BD avec données de test
-    </button>
-</p>
-
-<div *ngIf="currentRoute !== '/login'">
-    <p>Route courante : {{currentRoute}}</p>
-    <nav>
-        <a routerLink="/login">
-            <button mat-raised-button (click)="login()">{{labelConnexion}}</button>
-        </a>
-    </nav>
-    <p *ngIf="isLogged()">Vous êtes connecté en tant que {{nom}}</p>
-</div> -->
-
-<!-- Indique que le composant affiché sera celui
-     correspondant à l'URL courant
--->
-<mat-toolbar>
+<mat-toolbar color="primary">
     <mat-toolbar-row>
-        <h4>Logo Here</h4>
+        <h4>Right click</h4>
         <button mat-button (click)="opened=!opened"> <mat-icon>
             menu
         </mat-icon></button>
@@ -53,4 +29,3 @@
         End
     </mat-sidenav-content>
 </mat-sidenav-container> -->
-<!-- <router-outlet></router-outlet> -->

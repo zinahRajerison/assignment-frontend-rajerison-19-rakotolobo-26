@@ -26,10 +26,13 @@ import { AssignmentDetailComponent } from './assignments/assignment-detail/assig
 import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assignment.component';
 import { authGuard } from './shared/auth.guard';
-import { LoginComponent } from './login/login.component';  
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';  
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 const routes: Routes = [
   {
@@ -38,6 +41,10 @@ const routes: Routes = [
   },
   {
     path: 'home',
+    component: AssignmentsComponent
+  },
+  {
+    path: 'assignment',
     component: AssignmentsComponent
   },
   {
@@ -66,7 +73,8 @@ const routes: Routes = [
     AssignmentDetailComponent,
     AddAssignmentComponent,
     EditAssignmentComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +85,7 @@ const routes: Routes = [
     MatButtonModule, MatIconModule, MatDividerModule,
     MatInputModule, MatFormFieldModule, MatDatepickerModule,
     MatListModule, MatCardModule, MatCheckboxModule, MatSlideToggleModule,
-    MatTableModule, MatPaginatorModule
+    MatTableModule, MatPaginatorModule, MatSidenavModule, MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

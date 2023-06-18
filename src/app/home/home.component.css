@@ -3,9 +3,5 @@ mat-sidenav-container{
 }
 mat-sidenav {
     width: 200px;
-    background-color: white;
-}
-mat-toolbar {
-    background-color: black;
-    color:bisque
+    background-color: aquamarine;
 }
