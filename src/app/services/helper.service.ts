@@ -8,15 +8,20 @@ export class HelperService {
   constructor() { }
   
   formOption (use_authorization = false) {
+    
+    if (!use_authorization) {
+      return { 
+        headers: {
+          'Content-Type' : 'application/json'
+        }
+      }
+    }
     const options = { 
       headers: {
-        'Content-Type' : 'application/json'
+        'Content-Type' : 'application/json',
+        'x-access-token': localStorage.getItem("token")
       }
     };
-    
-    if (use_authorization) {
-      // options['headers']['Authorization'] = 'Bearer ' + localStorage.getItem("token");
-    }
     return options;
   }
   

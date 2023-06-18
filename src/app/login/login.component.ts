@@ -20,6 +20,7 @@ export class LoginComponent {
     signUp(){
       type Data = {
         token?: string;
+        user? : Object
       };
       this.ClientServ.connect(this.login, this.password)
         .pipe(
@@ -36,6 +37,8 @@ export class LoginComponent {
           console.log(data.token)
           this.ClientServ.loggedIn = true;
           localStorage.setItem("token",JSON.stringify(data.token));
+          localStorage.setItem("user", JSON.stringify(data.user))
+          
           // this.toolServ.setUser(user);
           this.router.navigate(['/home']);
         });
