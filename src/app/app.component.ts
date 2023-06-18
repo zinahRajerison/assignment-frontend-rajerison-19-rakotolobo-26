@@ -13,7 +13,7 @@ export class AppComponent {
   labelConnexion = "Se connecter";
   nom:string = "";
   currentRoute:string = "";
-  opened=false
+  opened=true
 
   constructor(private authService:AuthService, 
               private router:Router,
