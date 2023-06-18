@@ -17,7 +17,7 @@ export class AddAssignmentComponent implements OnInit{
   sujet = "";
   rendu!: boolean;
   id_auteur!: String;
-  id_matiere = "";
+  id_matiere: any;
   note!: Number;
   remarques!: String;
   matieres:Matiere[] = [];
@@ -27,7 +27,6 @@ export class AddAssignmentComponent implements OnInit{
               private router:Router) { }
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
-    console.log("sdfghjkljhgf------------------------------------");
     this.getMatieres();
   }
 
@@ -35,7 +34,6 @@ export class AddAssignmentComponent implements OnInit{
     this.assignmentsService.getMatieres()
     .subscribe(data => {
       this.matieres = data;
-      console.log("Données reçues");
       console.log(data);
     });
   }
