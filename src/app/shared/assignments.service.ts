@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { bdInitialAssignments } from './data';
 import { HelperService } from '../services/helper.service'
 import { base_url } from '../../environments/environment';
+import { Matiere } from '../matiere/matiere.model';
 
 @Injectable({
   providedIn: 'root'
@@ -115,7 +116,7 @@ assignments:Assignment[] = []
   peuplerBD() {
     bdInitialAssignments.forEach(a => {
       const newAssignment = new Assignment();
-      newAssignment.id = a.id;
+      // newAssignment.id = a.id;
       newAssignment.nom = a.nom;
       newAssignment.dateDeRendu = new Date(a.dateDeRendu);
       newAssignment.rendu = a.rendu;
@@ -135,7 +136,7 @@ assignments:Assignment[] = []
  
     bdInitialAssignments.forEach(a => {
       const nouvelAssignment = new Assignment();
-      nouvelAssignment.id = a.id;
+      // nouvelAssignment.id = a.id;
       nouvelAssignment.nom = a.nom;
       nouvelAssignment.dateDeRendu = new Date(a.dateDeRendu);
       nouvelAssignment.rendu = a.rendu;
@@ -144,5 +145,8 @@ assignments:Assignment[] = []
     });
  
     return forkJoin(appelsVersAddAssignment);
+  }
+  getMatieres(){
+    return this.http.get<Matiere[]>(base_url + "/matiere");
   }
 }

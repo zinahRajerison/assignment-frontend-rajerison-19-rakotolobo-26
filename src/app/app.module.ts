@@ -17,6 +17,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { RenduDirective } from './shared/rendu.directive';
@@ -33,6 +34,7 @@ import { authGuard } from './shared/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';  
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatiereComponent } from './matiere/matiere.component';
 
 const routes: Routes = [
   {
@@ -74,7 +76,8 @@ const routes: Routes = [
     AddAssignmentComponent,
     EditAssignmentComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    MatiereComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +88,7 @@ const routes: Routes = [
     MatButtonModule, MatIconModule, MatDividerModule,
     MatInputModule, MatFormFieldModule, MatDatepickerModule,
     MatListModule, MatCardModule, MatCheckboxModule, MatSlideToggleModule,
-    MatTableModule, MatPaginatorModule, MatSidenavModule, MatToolbarModule
+    MatTableModule, MatPaginatorModule, MatSidenavModule, MatToolbarModule, MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
