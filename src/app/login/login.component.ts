@@ -34,6 +34,7 @@ export class LoginComponent {
         )
         .subscribe((data:Data) =>{
           console.log(data.token)
+          this.ClientServ.loggedIn = true;
           localStorage.setItem("token",JSON.stringify(data.token));
           // this.toolServ.setUser(user);
           this.router.navigate(['/home']);

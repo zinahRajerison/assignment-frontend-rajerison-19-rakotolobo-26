@@ -24,12 +24,12 @@ export class AuthService {
       'login' : login,
       'password' : mdp,
     };
-    this.loggedIn = true;
+    // this.loggedIn = true;
     return this.http.post(base_url + '/login', body);
   }
   logIn() {
     
-    this.loggedIn = true;
+    // this.loggedIn = true;
   }
   logOut() {
     console.log("ON SE DELOGGE")
