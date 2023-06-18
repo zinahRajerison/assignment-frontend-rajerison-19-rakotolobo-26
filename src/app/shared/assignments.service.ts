@@ -34,27 +34,27 @@ assignments:Assignment[] = []
 
   getAssignment(id:number):Observable<Assignment|undefined> {
     // Plus tard on utilisera un Web Service et une BD
-    return this.http.get<Assignment|undefined>(`${this.uri_api}/${id}`)
+    return this.http.get<Assignment|undefined>(`${this.uri_api}/${id}`);
    
-    .pipe(
-      map(a => {
-        if(a) {
-          a.nom += " MAP MAP MAP";
-        }
-        return a;
-      }),
-      tap(a => {
-        if(a)
-          console.log("ICI DANS LE TAP " + a.nom)
-      }),
-      map(a => {
-        if(a) {
-          a.nom += " TOTOTOTO";
-        }
-        return a;
-      }),
-      catchError(this.handleError<Assignment>("Erreur dans le traitement de assignment avec id = " + id))
-    )
+    // .pipe(
+    //   map(a => {
+    //     if(a) {
+    //       a.nom += " MAP MAP MAP";
+    //     }
+    //     return a;
+    //   }),
+    //   tap(a => {
+    //     if(a)
+    //       console.log("ICI DANS LE TAP " + a.nom)
+    //   }),
+    //   map(a => {
+    //     if(a) {
+    //       a.nom += " TOTOTOTO";
+    //     }
+    //     return a;
+    //   }),
+    //   catchError(this.handleError<Assignment>("Erreur dans le traitement de assignment avec id = " + id))
+    // )
     
     // On va chercher dans le tableau des assignments
     // l'assignment dont l'id est celui passé en paramètre
