@@ -77,8 +77,8 @@ export class AssignmentDetailComponent implements OnInit {
     });
   }
 
-  isLogged() {
+  isAdmin() {
     // renvoie si on est loggé ou pas
-    return this.authService.loggedIn;
+  return this.authService.loggedAsAdmin
   }
 }

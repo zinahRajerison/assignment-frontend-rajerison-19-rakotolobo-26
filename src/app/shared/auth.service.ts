@@ -9,7 +9,7 @@ import { HelperService } from '../services/helper.service'
 })
 export class AuthService {
   loggedIn = false;
-
+  loggedAsAdmin = false;
   constructor(private loggingService:LoggingService,
     private http:HttpClient,  public toolServ:HelperService) { }
 
@@ -39,10 +39,25 @@ export class AuthService {
 
   // si on l'utilisait on ferai isAdmin().then(...)
   isAdmin() {
+    type User={
+      profil:string
+    }
     // Pour le moment, version simplifiée...
     // on suppose qu'on est admin si on est loggué
     const isUserAdminPromise = new Promise((resolve, reject) => {
-        resolve(this.loggedIn);
+        if(this.loggedIn){
+          var user:User = JSON.parse(localStorage.getItem("user")!);
+          if(user.profil == "etudiant"){
+            this.loggedAsAdmin = false 
+            resolve(false);
+          }else{
+            this.loggedAsAdmin = true 
+            resolve(true)
+          }
+        }else{
+          this.loggedAsAdmin = false 
+          resolve(false)
+        }
     });
 
     // on renvoie la promesse qui dit si on est admin ou pas

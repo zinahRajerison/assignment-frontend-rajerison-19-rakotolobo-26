@@ -1,7 +1,7 @@
 <!-- Indique que le composant affiché sera celui
      correspondant à l'URL courant
 -->
-<mat-toolbar  *ngIf="currentRoute !== '/login'">
+<mat-toolbar  *ngIf="currentRoute !== '/login' && currentRoute !== '/'">
     <mat-toolbar-row>
        
         <button mat-button (click)="opened=!opened"> <mat-icon>
@@ -17,7 +17,7 @@
         </a>
     </mat-toolbar-row>
 </mat-toolbar>
-<mat-sidenav-container *ngIf="currentRoute !== '/login'">
+<mat-sidenav-container *ngIf="currentRoute !== '/login' && currentRoute !== '/'">
     <mat-sidenav [(opened)]="opened" mode="side">
         <mat-list>
             <p *ngIf="isLogged()"> <mat-list-item><a><mat-icon>account_circle</mat-icon> {{nom}} </a></mat-list-item></p>
