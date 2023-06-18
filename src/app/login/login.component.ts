@@ -14,9 +14,13 @@ export class LoginComponent {
     password: string = ""
     error_msg:string =""
     show:boolean = false
+   
     constructor (public ClientServ:AuthService,public router:Router){}
 
     signUp(){
+      type Data = {
+        token?: string;
+      };
       this.ClientServ.connect(this.login, this.password)
         .pipe(
           catchError(error => {
@@ -27,9 +31,9 @@ export class LoginComponent {
             return throwError('Something went wrong. Please try again later.');
           })
         )
-        .subscribe(data =>{
-          console.log(data)
-          // localStorage.setItem("token",JSON.stringify(data.token));
+        .subscribe((data:Data) =>{
+          console.log(data.token)
+          localStorage.setItem("token",JSON.stringify(data.token));
           // this.toolServ.setUser(user);
           this.router.navigate(['/home']);
         });

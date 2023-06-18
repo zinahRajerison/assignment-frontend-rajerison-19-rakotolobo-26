@@ -10,7 +10,8 @@
         <button mat-button (click)="opened=!opened"> <mat-icon>
             home
         </mat-icon> Home</button>
-        <h4>Logo Here</h4><a routerLink="/home">{{title}}</a>
+        
+        <span class="example-spacer"><h4>Logo Here</h4><a routerLink="/home">{{title}}</a></span>
         <a routerLink="/login">
             <button mat-raised-button (click)="login()"> <mat-icon>account_circle</mat-icon> {{labelConnexion}}</button>
         </a>
@@ -19,10 +20,11 @@
 <mat-sidenav-container *ngIf="currentRoute !== '/login'">
     <mat-sidenav [(opened)]="opened" mode="side">
         <mat-list>
-            <p *ngIf="isLogged()"> <mat-list-item><mat-icon>account_circle</mat-icon> Vous êtes connecté en tant que {{nom}} </mat-list-item></p>
-            <mat-list-item><a routerLink="/home">Home</a></mat-list-item>
+            <p *ngIf="isLogged()"> <mat-list-item><a><mat-icon>account_circle</mat-icon> {{nom}} </a></mat-list-item></p>
+            <p><mat-list-item><a routerLink="/home"><mat-icon> home </mat-icon>  Home</a></mat-list-item></p>
+            <p><mat-list-item><a routerLink="/assignment"> <mat-icon>assignment</mat-icon>  Assignment</a></mat-list-item></p>
+            
             <mat-list-item><a routerLink="/login">Login</a></mat-list-item>
-            <mat-list-item><a routerLink="/assignment"> <mat-icon>assignment</mat-icon>Assignment</a></mat-list-item>
             <mat-list-item><button mat-raised-button color="primary" (click)="creerDonneesDeTest()">
                 Peupler BD avec données de test
             </button></mat-list-item>

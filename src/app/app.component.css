@@ -3,7 +3,8 @@ mat-sidenav-container{
 }
 mat-sidenav {
     width: 200px;
-    background-color: white;
+    background-color: black;
+    color: bisque;
 }
 mat-toolbar {
     background-color: black;
@@ -11,4 +12,8 @@ mat-toolbar {
 }
 a{
     color: bisque;
+}
+.example-spacer {
+    flex: 1 1 auto;
+    text-align: center;
 }
