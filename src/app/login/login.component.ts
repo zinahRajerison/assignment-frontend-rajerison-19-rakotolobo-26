@@ -36,7 +36,7 @@ export class LoginComponent {
         .subscribe((data:Data) =>{
           console.log(data.token)
           this.ClientServ.loggedIn = true;
-          localStorage.setItem("token",JSON.stringify(data.token));
+          localStorage.setItem("token",(data.token)?.toString()!);
           localStorage.setItem("user", JSON.stringify(data.user))
           
           // this.toolServ.setUser(user);

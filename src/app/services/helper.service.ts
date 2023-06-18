@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,10 +17,10 @@ export class HelperService {
       }
     }
     const options = { 
-      headers: {
+      headers:new HttpHeaders( {
         'Content-Type' : 'application/json',
-        'x-access-token': localStorage.getItem("token")
-      }
+        'x-access-token': localStorage.getItem("token") as string
+      })
     };
     return options;
   }
