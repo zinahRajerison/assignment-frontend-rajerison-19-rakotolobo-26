@@ -5,6 +5,7 @@ import { LoggingService } from './logging.service';
 import { HttpClient } from '@angular/common/http';
 import { bdInitialAssignments } from './data';
 import { HelperService } from '../services/helper.service'
+import { base_url } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ assignments:Assignment[] = []
   constructor(private loggingService:LoggingService,
     private http:HttpClient,  public toolServ:HelperService) { }
 
-    uri_api = 'http://localhost:8010/api/assignments';
-    user_api = 'http://localhost:8010/api/';
+    uri_api = base_url+'/assignments';
+    // user_api = 'http://localhost:8010/api/';
 
   getAssignments(page:number, limit:number):Observable<any> {
     // normalement on doit envoyer une requête HTTP
@@ -144,12 +145,4 @@ assignments:Assignment[] = []
  
     return forkJoin(appelsVersAddAssignment);
   }
-  connect(login : string, mdp : string) {
-      const options = this.toolServ.formOption();
-      let body : any = {
-        'login' : login,
-        'password' : mdp,
-      };
-      return this.http.post(this.user_api + 'login', body);
-    }
 }

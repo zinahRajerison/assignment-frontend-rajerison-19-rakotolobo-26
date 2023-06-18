@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AssignmentsService } from '../shared/assignments.service';
+import { AuthService } from '../shared/auth.service';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
@@ -14,7 +14,7 @@ export class LoginComponent {
     password: string = ""
     error_msg:string =""
     show:boolean = false
-    constructor (public ClientServ:AssignmentsService,public router:Router){}
+    constructor (public ClientServ:AuthService,public router:Router){}
 
     signUp(){
       this.ClientServ.connect(this.login, this.password)
