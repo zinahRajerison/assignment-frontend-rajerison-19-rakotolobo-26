@@ -1,0 +1,29 @@
+<h2>huhu</h2>
+<button>Press</button>
+<mat-card class="example-card">
+    <mat-card-header>
+    <mat-card-title> <mat-icon>event</mat-icon> Ajouter notation </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+    <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+        <tr>
+            <td>
+            <mat-form-field class="example-full-width">
+            <input matInput placeholder="Note /20" [(ngModel)] ="data.note" name="note" required>
+            </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+        <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="Remarque"  [(ngModel)]= "data.remarques" type="remarques" name="password" required>
+        </mat-form-field></td>
+        </tr></table>
+    </form>
+    <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+    </mat-card-content>
+    
+    <div mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+      </div>
+</mat-card>

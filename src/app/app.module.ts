@@ -28,6 +28,8 @@ import { AddAssignmentComponent } from './assignments/add-assignment/add-assignm
 import { Routes, RouterModule } from '@angular/router';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assignment.component';
 import { authGuard } from './shared/auth.guard';
@@ -35,6 +37,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';  
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatiereComponent } from './matiere/matiere.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 const routes: Routes = [
   {
@@ -65,6 +68,13 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'liste',
+    component: HomeComponent
+  }, {
+    path: 'dialog',
+    component: DialogComponent
   }
 ]
 @NgModule({
@@ -77,7 +87,8 @@ const routes: Routes = [
     EditAssignmentComponent,
     LoginComponent,
     HomeComponent,
-    MatiereComponent
+    MatiereComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +99,7 @@ const routes: Routes = [
     MatButtonModule, MatIconModule, MatDividerModule,
     MatInputModule, MatFormFieldModule, MatDatepickerModule,
     MatListModule, MatCardModule, MatCheckboxModule, MatSlideToggleModule,
-    MatTableModule, MatPaginatorModule, MatSidenavModule, MatToolbarModule, MatSelectModule
+    MatTableModule, MatPaginatorModule, MatSidenavModule, MatToolbarModule, MatSelectModule,DragDropModule, MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

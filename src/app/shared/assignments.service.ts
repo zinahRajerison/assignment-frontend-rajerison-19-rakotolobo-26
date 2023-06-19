@@ -156,4 +156,16 @@ assignments:Assignment[] = []
     const options = this.toolServ.formOption(true);
     return this.http.get<Matiere[]>(base_url + "/matiere",options);
   }
+  findAssignmentAdmin(id_user:string):Observable<any> {
+    const options = this.toolServ.formOption(true);
+    // normalement on doit envoyer une requête HTTP
+    // sur un web service, et ça peut prendre du temps
+    // On a donc besoin "d'attendre que les données arrivent".
+    // Angular utilise pour cela la notion d'Observable
+    return this.http.get<Assignment[]>(base_url + "/assignmentAdmin?id_user=" + id_user,options);
+    
+    // of() permet de créer un Observable qui va
+    // contenir les données du tableau assignments
+    //return of(this.assignments);
+  }
 }

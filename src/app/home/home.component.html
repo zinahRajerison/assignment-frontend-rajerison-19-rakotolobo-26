@@ -1,31 +1,66 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <h4>Right click</h4>
-        <button mat-button (click)="opened=!opened"> <mat-icon>
-            menu
-        </mat-icon></button>
-        <button mat-button (click)="opened=!opened"> <mat-icon>
-            home
-        </mat-icon> Home</button>
-    </mat-toolbar-row>
-</mat-toolbar>
-<mat-sidenav-container>
-    <mat-sidenav [(opened)]="opened" mode="side">
-        <mat-list>
-            <mat-list-item><a routerLink="/home">Home</a></mat-list-item>
-            <mat-list-item><a routerLink="/login">Login</a></mat-list-item>
-            <mat-list-item><a routerLink="/assignment">Assignment</a></mat-list-item>
-        </mat-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <router-outlet></router-outlet>
-    </mat-sidenav-content>
-</mat-sidenav-container>
-<!-- <mat-sidenav-container>
-    <mat-sidenav opened>
-       Start
-    </mat-sidenav>
-    <mat-sidenav-content>
-        End
-    </mat-sidenav-content>
-</mat-sidenav-container> -->
+<div cdkDropListGroup>
+    <div class="example-container">
+      <h2>Devoirs a rendre</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="devoirsPasRendus"
+        class="example-list"
+        cdkDropListSortingDisabled
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of devoirsPasRendus" cdkDrag>
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>{{item.nom}}</mat-card-title>
+                  <mat-card-subtitle>Date de rendu: {{item.dateDeRendu}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                  <p>
+                    {{item.sujet}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+      </div>
+    </div>
+  
+    <div class="example-container">
+      <h2>Devoirs rendus</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="devoirsRendus"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of devoirsRendus" cdkDrag>
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>{{item.nom}}</mat-card-title>
+                  <mat-card-subtitle>Date de rendu: {{item.dateDeRendu}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                  <p>
+                    {{item.sujet}} Notes: {{item.note}}
+                  </p><p> 
+                    Remarques : {{item.remarques}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+      </div>
+    </div>
+    
+  </div>  
+  
