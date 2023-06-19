@@ -16,10 +16,10 @@ export class AddAssignmentComponent implements OnInit{
   dateDeRendu!: Date;
   sujet = "";
   rendu!: boolean;
-  id_auteur!: String;
+  id_auteur!: string;
   id_matiere: any;
   note!: Number;
-  remarques!: String;
+  remarques!: string;
   matieres:Matiere[] = [];
 
 
@@ -50,9 +50,16 @@ export class AddAssignmentComponent implements OnInit{
     nouvelAssignment.dateDeRendu = this.dateDeRendu;
     nouvelAssignment.rendu = false;
     nouvelAssignment.sujet = this.sujet;
-    nouvelAssignment.id_auteur = "";
+    // nouvelAssignment.id_auteur = localStorage.getItem("user");
+    const storedUserString = localStorage.getItem("user");
+    if (storedUserString) {
+      const storedUser = JSON.parse(storedUserString);
+      nouvelAssignment.id_auteur = storedUser._id;
+    }
     console.log("matiere------------------" +this.id_matiere);
     nouvelAssignment.id_matiere = this.id_matiere;
+    nouvelAssignment.note = 0;
+    nouvelAssignment.remarques = "";
 
     // on demande au service d'ajouter l'assignment
     this.assignmentsService.addAssignment(nouvelAssignment)
