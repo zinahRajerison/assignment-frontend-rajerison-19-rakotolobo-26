@@ -35,8 +35,13 @@ export class AppComponent {
   }
 
   isLogged() {
+    type User={
+      nom:string,
+      prenom : string
+    }
     if(this.authService.loggedIn) {
-      this.nom = "Michel Buffa";
+      var user:User = JSON.parse(localStorage.getItem("user")!);
+      this.nom = user.nom + " " +user.prenom;
       this.labelConnexion = "Se déconnecter";
     }
     return this.authService.loggedIn;
