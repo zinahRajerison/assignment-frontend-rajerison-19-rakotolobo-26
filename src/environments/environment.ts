@@ -7,7 +7,8 @@ export const environment = {
     production: false
   };
   
-  export const base_url = "http://localhost:8010/api";
+  // export const base_url = "http://localhost:8010/api";
+  export const base_url = "https://assignment-backend-19-26.onrender.com/api";
   
   export const user = {
     token : ''
