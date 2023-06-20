@@ -44,7 +44,7 @@
                   <mat-card-title>{{item.nom}}</mat-card-title>
                   <mat-card-subtitle>Date de rendu: {{item.dateDeRendu| date: 'dd/MM/yy'}}</mat-card-subtitle>
                 </mat-card-header>
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <img mat-card-image [src]="item.photoMatiere">
                 <mat-card-content>
                   <p>
                     Sujet: {{item.sujet}}
