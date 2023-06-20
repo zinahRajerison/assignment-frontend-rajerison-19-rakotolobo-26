@@ -27,6 +27,9 @@ export class AssignmentDetailComponent implements OnInit {
     // on va chercher l'assignment à afficher
     this.assignmentsService.getAssignment(id)
       .subscribe(assignment => {
+        
+        console.log("assignment")
+        console.log(assignment)
         this.assignmentTransmis = assignment;
       });
   }
