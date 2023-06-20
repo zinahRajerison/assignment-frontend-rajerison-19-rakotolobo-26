@@ -23,10 +23,10 @@
             <p *ngIf="isLogged()"> <mat-list-item><a><mat-icon>account_circle</mat-icon> {{nom}} </a></mat-list-item></p>
             <p  *ngIf="isAdmin()"><mat-list-item><a routerLink="/liste"><mat-icon> home </mat-icon>  Liste des devoirs</a></mat-list-item></p>
             <p  *ngIf="!isAdmin()"><mat-list-item ><a routerLink="/assignment"> <mat-icon>assignment</mat-icon>  Liste des devoirs</a></mat-list-item></p>
-            <p><mat-list-item><a routerLink="/add"><mat-icon>note_add</mat-icon> Ajouter devoir</a></mat-list-item></p>
-            <mat-list-item><button mat-raised-button color="primary" (click)="creerDonneesDeTest()">
+            <p *ngIf="!isAdmin()" ><mat-list-item><a routerLink="/add"><mat-icon>note_add</mat-icon> Ajouter devoir</a></mat-list-item></p>
+            <p *ngIf="isAdmin()" ><mat-list-item><button mat-raised-button color="primary" (click)="creerDonneesDeTest()">
                 Peupler BD avec données de test
-            </button></mat-list-item>
+            </button></mat-list-item></p>
             
         </mat-list>
     </mat-sidenav>
