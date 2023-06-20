@@ -3,6 +3,7 @@ import { Assignment } from '../assignment.model';
 import { Matiere } from '../../matiere/matiere.model';
 import { AssignmentsService } from 'src/app/shared/assignments.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-add-assignment',
@@ -24,7 +25,7 @@ export class AddAssignmentComponent implements OnInit{
 
 
   constructor(private assignmentsService: AssignmentsService,
-              private router:Router) { }
+              private router:Router ,private authservice: AuthService) { }
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
     this.getMatieres();
@@ -65,10 +66,15 @@ export class AddAssignmentComponent implements OnInit{
     this.assignmentsService.addAssignment(nouvelAssignment)
       .subscribe(message => {
         console.log(message);
+        if(this.authservice.loggedAsAdmin){
+           this.router.navigate(["/liste"]);
+        }
+        else{
 
         // On va naviguer vers la page d'accueil pour afficher la liste
         // des assignments
         this.router.navigate(["/home"]);
+        }
 
       });
   }

@@ -31,6 +31,9 @@ export class AppComponent {
   }
 
   login() {
+    if(this.authService.loggedIn) {
+      this.authService.logOut()
+    }
     this.router.navigate(["/login"]);
   }
 
@@ -56,5 +59,10 @@ export class AppComponent {
       // plusieurs manières de faire....
       window.location.reload();
     });
+  }
+  
+  isAdmin() {
+    // renvoie si on est loggé ou pas
+  return this.authService.loggedAsAdmin
   }
 }

@@ -38,16 +38,17 @@ export class LoginComponent {
           this.ClientServ.loggedIn = true;
           localStorage.setItem("token",(data.token)?.toString()!);
           localStorage.setItem("user", JSON.stringify(data.user))
-        this.ClientServ.isAdmin()
-        .then(authentifie => {
-          if(authentifie) {
-            this.ClientServ.loggedAsAdmin = true 
-          }else{
-            this.ClientServ.loggedAsAdmin = false 
-          }
-        })
+          this.ClientServ.isAdmin()
+          .then(authentifie => {
+            if(authentifie) {
+              this.ClientServ.loggedAsAdmin = true 
+              this.router.navigate(['/liste']);
+            }else{
+              this.ClientServ.loggedAsAdmin = false 
+              this.router.navigate(['/home']);
+            }
+          })
           // this.toolServ.setUser(user);
-          this.router.navigate(['/home']);
         });
 
     }

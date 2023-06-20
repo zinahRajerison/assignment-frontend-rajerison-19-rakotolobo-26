@@ -1,16 +1,16 @@
 .example-container {
-    width: 400px;
+    width: 500px;
     max-width: 100%;
-    margin: 0 25px 25px 0;
     display: inline-block;
     vertical-align: top;
+    text-align: center;
   }
   .example-card{
-    width:300px
+    width:200px
   }
   .example-list {
     border: solid 1px #ccc;
-    min-height: 60px;
+    min-height: 400px;
     background: white;
     border-radius: 4px;
     overflow: hidden;
@@ -21,14 +21,14 @@
     padding: 20px 10px;
     border-bottom: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
-    display: flex;
+    display: inline-block;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
     cursor: move;
     background: white;
-    font-size: 14px;
+    font-size: 10px;
   }
   
   .cdk-drag-preview {
