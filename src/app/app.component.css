@@ -17,3 +17,7 @@ a{
     flex: 1 1 auto;
     text-align: center;
 }
+/* it's ugly having link underline so I removed it */
+a {
+    text-decoration: none!important;
+}
