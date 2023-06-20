@@ -3,3 +3,6 @@
     align-items: flex-end;
     justify-content: space-between;
 }
+mat-list.mat-mdc-list.mat-mdc-list-base.mdc-list.ng-star-inserted {
+    margin-left: 9px;
+}
