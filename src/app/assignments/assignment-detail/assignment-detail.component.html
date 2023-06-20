@@ -1,13 +1,13 @@
 <mat-card *ngIf="assignmentTransmis">
   <mat-card-content>
     <mat-card-title>{{assignmentTransmis.nom}}</mat-card-title>
-    <mat-card-subtitle>Date de rendu <p>: {{assignmentTransmis.dateDeRendu | date: 'dd/MM/yy'}} </p></mat-card-subtitle>
-    <mat-card-subtitle>Sujet<p>: {{assignmentTransmis.sujet}} </p></mat-card-subtitle>
+    <mat-card-subtitle>Date de rendu:<p>{{assignmentTransmis.dateDeRendu | date: 'dd/MM/yy'}} </p></mat-card-subtitle>
+    <mat-card-subtitle>Sujet:<p>{{assignmentTransmis.sujet}} </p></mat-card-subtitle>
   </mat-card-content>
   <mat-card-actions id="bottom">
     <mat-list *ngIf="assignmentTransmis.rendu">
       Notation
-          <mat-list-item> Note <p>{{assignmentTransmis.note}}</p></mat-list-item>
+          <mat-list-item> Note: <p>{{assignmentTransmis.note}}</p></mat-list-item>
           <mat-list-item> Remarques: <p>{{assignmentTransmis.remarques}}</p> </mat-list-item>
     </mat-list>
     
