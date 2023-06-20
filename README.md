@@ -28,15 +28,16 @@ Le site contient un menu de navigation deroulant donnant un choix sur `La liste 
 ### Donnees de test
 
 #### Enseignant (Admin):
-Username `Smith` Password `1234` Matiere `Big Data`
+- Username `Smith` Password `1234` Matiere `Big Data`
 
 #### Etudiant:
-Username `Claude` Password `1234`
-Username `Julie` Password `1234`
+- Username `Claude` Password `1234`
+- Username `Julie` Password `1234`
 
 ### Base de donnees
 - Ajout de nouvelles proprietes aux modeles
 
 ## Liens des sites
 Front : https://assignment-frontend-19-26.onrender.com/
+
 Back : https://assignment-backend-19-26.onrender.com/ 
