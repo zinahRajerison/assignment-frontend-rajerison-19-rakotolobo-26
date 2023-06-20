@@ -11,6 +11,9 @@ import { AuthService } from 'src/app/shared/auth.service';
 })
 export class AssignmentDetailComponent implements OnInit {
   assignmentTransmis?: Assignment;
+  photo?:string;
+  nomMatiere?:string
+  nomEtudiant?:string
 
   constructor(private assignmentsService: AssignmentsService,
     private route: ActivatedRoute,
@@ -31,6 +34,9 @@ export class AssignmentDetailComponent implements OnInit {
         console.log("assignment")
         console.log(assignment)
         this.assignmentTransmis = assignment;
+        this.photo = this.assignmentTransmis?.matiere?.[0]?.image
+        this.nomMatiere = this.assignmentTransmis?.matiere?.[0]?.nom 
+        this.nomEtudiant = this.assignmentTransmis?.auteur?.[0]?.nom + " " + this.assignmentTransmis?.auteur?.[0]?.prenom
       });
   }
 

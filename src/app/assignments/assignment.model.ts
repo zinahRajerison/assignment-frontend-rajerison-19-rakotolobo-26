@@ -8,5 +8,7 @@ export class Assignment {
     id_matiere!: String;
     note!: Number;
     remarques!: String;
+    matiere:any
+    auteur:any
 }
 
