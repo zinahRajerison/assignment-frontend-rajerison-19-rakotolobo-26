@@ -74,3 +74,8 @@ div[cdkdroplistgroup] {
 mat-card-subtitle.mat-mdc-card-subtitle {
   margin-bottom: 8px;
 }
+a.mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base {
+  background-color: #b3cb6a;
+  color: #070a07;
+  margin-top: 11px;
+}
