@@ -6,3 +6,8 @@
 mat-list.mat-mdc-list.mat-mdc-list-base.mdc-list.ng-star-inserted {
     margin-left: 9px;
 }
+mat-card.mat-mdc-card.mdc-card.ng-star-inserted {
+    margin-top: 50px;
+    margin-left: 50px;
+    max-width: 600px;
+}
