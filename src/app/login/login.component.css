@@ -33,7 +33,7 @@
   width: 100%;
   text-align: center;
   color:white;
-  height: 100px;
+  height: 152px;
 }
 .example-form table{
   width:100%;
@@ -50,4 +50,9 @@
 }
 .example-full-width .mat-mdc-text-field-wrapper .testZinah{
   padding-top: 15px!important;
+}
+/* app assignement icon positionning */
+mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color {
+  position: relative;
+  top: 5px;
 }
