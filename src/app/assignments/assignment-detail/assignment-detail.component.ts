@@ -74,7 +74,8 @@ export class AssignmentDetailComponent implements OnInit {
     {
       queryParams: {
         nom: this.assignmentTransmis?.nom,
-        matiere: "Angular"
+        matiere: "Angular",
+        id: this.assignmentTransmis?._id,
       },
       fragment: "edition"
     });

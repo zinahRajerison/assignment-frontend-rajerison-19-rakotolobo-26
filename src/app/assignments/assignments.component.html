@@ -1,17 +1,7 @@
 <h2>{{titre}}</h2>
 
 <main class="container">
-    <nav class="ajouterBtn">
-        <a routerLink="/add">
-            <button mat-flat-button color="accent"> Ajouter Assignment
-            </button>
-        </a>
-    </nav>
-
-
- 
-    <mat-divider></mat-divider>
-    <p>
+    <!-- <p>
         Nb assignments total {{totalDocs}}, par page {{limit}}, nbPages {{totalPages}}
     </p>
     <p>
@@ -33,8 +23,8 @@
     <button (click)="dernierePage()" [disabled]="!hasNextPage">
         Derniere page
     </button>
-</p>
-<h1>Affichage avec data table</h1>
+</p> -->
+<h1>Affichage de tous les devoirs</h1>
 <mat-paginator [pageSizeOptions]="[5, 10, 20]"
                  showFirstLastButtons
                  aria-label="Selection de la page des assigments"
@@ -85,7 +75,7 @@
   </mat-paginator>
 
   
-<h1>Affichage avec mat-list / mat-list-item</h1>
+<!-- <h1>Affichage avec mat-list / mat-list-item</h1>
     <mat-list *ngFor="let a of assignments">
         <a routerLink="/assignments/{{a._id}}">
             <h3 mat-subheader>Date limite: {{a.dateDeRendu | date: 'dd/MM/yy'}}</h3>
@@ -118,6 +108,6 @@
             <mat-divider></mat-divider>
         </a>
     </mat-list>
-</cdk-virtual-scroll-viewport>
+</cdk-virtual-scroll-viewport> -->
 
 </main>

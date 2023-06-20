@@ -13,6 +13,7 @@ export class EditAssignmentComponent implements OnInit {
  // associées aux champs du formulaire
  nomAssignment!: string;
  dateDeRendu!: Date;
+ sujet!: String;
 
  constructor(
    private assignmentsService: AssignmentsService,
@@ -27,24 +28,26 @@ export class EditAssignmentComponent implements OnInit {
   // on récupère l'id dans le snapshot passé par le routeur
   // le "+" force l'id de type string en "number"
   const id = +this.route.snapshot.params['id'];
-
   // Exemple de récupération des query params (après le ? dans l'url)
   const queryParams = this.route.snapshot.queryParams;
   console.log(queryParams);
   console.log("nom :"  + queryParams['nom'])
   console.log("matière :" + queryParams['matiere'])
+  const _id = queryParams['id']
+  console.log("_id :"  + queryParams['id'])
  
   // Exemple de récupération du fragment (après le # dans l'url)
   const fragment = this.route.snapshot.fragment;
   console.log("Fragment = " + fragment);
 
-  this.assignmentsService.getAssignment(id)
+  this.assignmentsService.getAssignment(_id)
   .subscribe((assignment) => {
     if (!assignment) return;
     this.assignment = assignment;
     // Pour pré-remplir le formulaire
     this.nomAssignment = assignment.nom;
     this.dateDeRendu = assignment.dateDeRendu;
+    this.sujet = assignment.sujet;
   });
 }
 onSaveAssignment() {
@@ -53,6 +56,7 @@ onSaveAssignment() {
   // on récupère les valeurs dans le formulaire
   this.assignment.nom = this.nomAssignment;
   this.assignment.dateDeRendu = this.dateDeRendu;
+  this.assignment.sujet = this.sujet;
   this.assignmentsService
     .updateAssignment(this.assignment)
     .subscribe((message) => {
