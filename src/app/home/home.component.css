@@ -28,7 +28,7 @@
     box-sizing: border-box;
     cursor: move;
     background: white;
-    font-size: 10px;
+    font-size: 14px;
   }
   
   .cdk-drag-preview {
@@ -57,4 +57,25 @@
 div[cdkdroplistgroup] {
   padding-left: 38px;
   padding-top: 13px;
+}
+.devoir-a-rendre {
+  color: cadetblue;
+}
+.devoir-rendu {
+  color: green;
+}
+.mat-mdc-card-content {
+  margin-top: 15px;
+}
+.mat-mdc-card-avatar.example-header-image {
+  border: 0.5px #e1e0e0 solid;
+  background-color: #f1f1f1;
+}
+mat-card-subtitle.mat-mdc-card-subtitle {
+  margin-bottom: 8px;
+}
+a.mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base {
+  background-color: #b3cb6a;
+  color: #070a07;
+  margin-top: 11px;
 }
