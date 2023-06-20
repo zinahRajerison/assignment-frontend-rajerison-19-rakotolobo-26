@@ -24,7 +24,7 @@ export class AuthService {
       'login' : login,
       'password' : mdp,
     };
-    // this.loggedIn = true;
+    
     return this.http.post(base_url + '/login', body);
   }
   logIn() {
@@ -47,15 +47,13 @@ export class AuthService {
     const isUserAdminPromise = new Promise((resolve, reject) => {
         if(this.loggedIn){
           var user:User = JSON.parse(localStorage.getItem("user")!);
+          console.log("profil"+user.profil)
           if(user.profil == "etudiant"){
-            this.loggedAsAdmin = false 
             resolve(false);
           }else{
-            this.loggedAsAdmin = true 
             resolve(true)
           }
         }else{
-          this.loggedAsAdmin = false 
           resolve(false)
         }
     });
