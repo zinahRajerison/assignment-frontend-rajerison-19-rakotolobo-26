@@ -1,7 +1,7 @@
 # assignment-frontend-rajerison-19-rakotolobo-26
 Frontend du projet assignement de 
-- Rajerison Lalao Zinah 19 
-- Rakotolobo Oelintsoa Vonjy Tahiana 26
+- Rajerison Lalao Zinah n° 19 
+- Rakotolobo Oelintsoa Vonjy Tahiana n° 26
 
 ## Fonctionnalites
 
