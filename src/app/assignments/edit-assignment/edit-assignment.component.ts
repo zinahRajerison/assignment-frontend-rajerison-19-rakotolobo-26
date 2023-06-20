@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AssignmentsService } from 'src/app/shared/assignments.service';
 import { Assignment } from '../assignment.model';
+import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
  selector: 'app-edit-assignment',
@@ -18,7 +19,8 @@ export class EditAssignmentComponent implements OnInit {
  constructor(
    private assignmentsService: AssignmentsService,
    private route: ActivatedRoute,
-   private router: Router
+   private router: Router,
+   private authService:AuthService
  ) {}
 
  ngOnInit(): void {
@@ -62,8 +64,16 @@ onSaveAssignment() {
     .subscribe((message) => {
       console.log(message);
 
-      // navigation vers la home page
-      this.router.navigate(['/home']);
+      // navigation vers la home page 
+      if(this.authService.loggedAsAdmin){
+           this.router.navigate(["/liste"]);
+          }
+          else{
+  
+          // On va naviguer vers la page d'accueil pour afficher la liste
+          // des assignments
+          this.router.navigate(["/home"]);
+          }
     });
 }
 }

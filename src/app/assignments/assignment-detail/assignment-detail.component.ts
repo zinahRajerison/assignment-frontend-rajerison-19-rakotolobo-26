@@ -15,7 +15,7 @@ export class AssignmentDetailComponent implements OnInit {
   constructor(private assignmentsService: AssignmentsService,
     private route: ActivatedRoute,
     private router: Router,
-    private authService:AuthService) { }
+    private authService:AuthService,) { }
 
   ngOnInit(): void {
     // appelée avant le rendu du composant
@@ -38,7 +38,7 @@ export class AssignmentDetailComponent implements OnInit {
     if (!this.assignmentTransmis) return;
 
     console.log("Suppression de l'assignment " + this.assignmentTransmis.nom);
-
+    console.log(this.assignmentTransmis)
     // on demande au service la suppression de l'assignment
     this.assignmentsService.deleteAssignment(this.assignmentTransmis)
       .subscribe(message => {
@@ -47,7 +47,14 @@ export class AssignmentDetailComponent implements OnInit {
         this.assignmentTransmis = undefined;
 
         // et on navigue vers la page d'accueil
+        if(this.authService.loggedAsAdmin){
+          this.router.navigate(["/liste"]);
+        }
+        else{
+        // On va naviguer vers la page d'accueil pour afficher la liste
+        // des assignments
         this.router.navigate(["/home"]);
+        }
       });
 
   }
