@@ -15,7 +15,7 @@
                   <mat-card-title>{{item.nom}}</mat-card-title>
                   <mat-card-subtitle>Date de rendu: {{item.dateDeRendu}}</mat-card-subtitle>
                 </mat-card-header>
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <img mat-card-image [src]="item.photoMatiere" width="50px">
                 <mat-card-content>
                   <p>
                     {{item.sujet}}
@@ -48,8 +48,11 @@
                 <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
                 <mat-card-content>
                   <p>
-                    {{item.sujet}} Notes: {{item.note}}
+                    Sujet: {{item.sujet}}
                   </p><p> 
+                    Notes: {{item.note}}
+                    </p>
+                    <p>
                     Remarques : {{item.remarques}}
                   </p>
                 </mat-card-content>

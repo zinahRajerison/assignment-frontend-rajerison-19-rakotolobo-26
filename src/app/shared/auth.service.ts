@@ -33,8 +33,8 @@ export class AuthService {
   }
   logOut() {
     console.log("ON SE DELOGGE")
-
     this.loggedIn = false;
+    localStorage.clear();
   }
 
   // si on l'utilisait on ferai isAdmin().then(...)
