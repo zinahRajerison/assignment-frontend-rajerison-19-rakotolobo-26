@@ -16,8 +16,11 @@ a{
 .example-spacer {
     flex: 1 1 auto;
     text-align: center;
-}
-/* it's ugly having link underline so I removed it */
+} 
 a {
     text-decoration: none!important;
+}
+.mat-mdc-list mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color {
+    position: relative;
+    top: 5px;
 }
